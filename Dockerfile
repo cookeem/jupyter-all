@@ -71,6 +71,14 @@ RUN pip install jupyter_contrib_nbextensions && \
 pip install scipy && pip install scikit-image && pip install tensorflow && \
 jupyter contrib nbextension install --system
 
+# root
+# install opencv and dlib
+RUN pip install opencv-contrib-python && \
+apt-get install -y build-essential cmake pkg-config && \
+apt-get install -y libx11-dev libatlas-base-dev && \
+apt-get install -y libgtk-3-dev libboost-python-dev && \
+pip install dlib
+
 USER jovyan
 
 # jovyan
